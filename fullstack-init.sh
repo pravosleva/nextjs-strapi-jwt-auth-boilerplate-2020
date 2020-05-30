@@ -1,25 +1,27 @@
 #!/bin/bash
-rm -rf .git/ &&
-rm -rf .gitignore &&
-rm -rf README.md &&
-git clone https://github.com/pravosleva/nextjs-redux-saga-boilerplate-2020.git.git frontend &&
+# rm -rf .git/ &&
+# rm -rf .gitignore &&
+# rm -rf README.md &&
+git clone https://github.com/pravosleva/nextjs-redux-saga-boilerplate-2020.git frontend &&
 yarn --cwd ./frontend &&
 # git clone https://github.com/pravosleva/path-to-backend.git backend &&
 # yarn --cwd ./backend &&
-echo "\
-=============================================\
-     ⚡ HEY! You can create new backend:\
-\
-     yarn global add create-strapi-app\
-     yarn create-strapi-app backend\
-=============================================\
-\
-=============================================\
-     DEVELOPMENT\
-=============================================\
-\
-👉 CHECK THIS BEFORE START:\
-  🔥 STEP 1: ./ecosystem.dev.config.js" &&
+
+# OR THIS:
+# npx create-strapi-app backend &&
+echo "
+  =========================================
+     ⚡ HEY! You can create new backend:
+
+     npx create-strapi-app backend
+  =========================================
+
+  =========================================
+     DEVELOPMENT
+  =========================================
+
+  👉 CHECK THIS BEFORE START:
+     🔥 STEP 1: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'back-1337',
@@ -51,21 +53,21 @@ echo "module.exports = {
   }],
 };
 " > ecosystem.dev.config.js &&
-echo "  🔥 STEP 2 (if you dont use pm2): ./frontend/.env.development" &&
+echo "     🔥 STEP 2 (if you dont use pm2): ./frontend/.env.development" &&
 echo "REACT_APP_API_ENDPOINT=\"http://localhost:1337\"
 " > frontend/.env.dev &&
-echo "\
-🚀 $ pm2 start ecosystem.dev.config.js\
-\
-=============================================\
-     PRODUCTION\
-=============================================\
-\
-👉 CHECK THIS BEFORE START:\
-  🔥 STEP 1: ./frontend/.env.production" &&
+echo "
+🚀 $ pm2 start ecosystem.dev.config.js
+
+  =========================================
+     PRODUCTION
+  =========================================
+
+  👉 CHECK THIS BEFORE START:
+     🔥 STEP 1: ./frontend/.env.production" &&
 echo "REACT_APP_API_ENDPOINT=\"https://DOMAIN.ru/api\"
 " > frontend/.env.prod &&
-echo "  🔥 STEP 2: ./ecosystem.prod.config.js" &&
+echo "     🔥 STEP 2: ./ecosystem.prod.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'strapi-autoru-3110',
@@ -97,8 +99,10 @@ echo "module.exports = {
   }],
 };
 " > ecosystem.prod.config.js &&
-echo "\
-🚀 $ bash build-all.sh\
-🚀 $ pm2 start ecosystem.prod.config.js\
-\
-=============================================" # && rm -rf fullstack-init.sh
+echo "
+  🚀 $ bash build-all.sh\n
+  🚀 $ pm2 start ecosystem.prod.config.js
+
+  ========================================="
+# rm -rf fullstack-init.sh
+exit 0
