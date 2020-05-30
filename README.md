@@ -14,7 +14,7 @@ _I have installed pm2@4.1.2_
 
 ## Development
 
-### `pm2 start ecosystem.prod.config.js` or `bash quick-start-dev.sh`
+### `pm2 start ecosystem.dev.config.js` or `bash quick-start-dev.sh`
 
 _Backend localhost:1337 / Frontend localhost:3000_
 

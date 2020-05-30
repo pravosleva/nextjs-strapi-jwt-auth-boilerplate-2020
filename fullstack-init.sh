@@ -4,15 +4,22 @@ rm -rf .gitignore &&
 rm -rf README.md &&
 git clone https://github.com/pravosleva/nextjs-redux-saga-boilerplate-2020.git.git frontend &&
 yarn --cwd ./frontend &&
-git clone https://github.com/pravosleva/path-to-backend.git backend &&
-yarn --cwd ./backend &&
-echo "" &&
-echo "===" &&
-echo "" &&
-echo "  DEVELOPMENT" &&
-echo "" &&
-echo "👉 CHECK THIS BEFORE START:" &&
-echo "  🔥 STEP 1: ./ecosystem.dev.config.js" &&
+# git clone https://github.com/pravosleva/path-to-backend.git backend &&
+# yarn --cwd ./backend &&
+echo "\
+=============================================\
+     ⚡ HEY! You can create new backend:\
+\
+     yarn global add create-strapi-app\
+     yarn create-strapi-app backend\
+=============================================\
+\
+=============================================\
+     DEVELOPMENT\
+=============================================\
+\
+👉 CHECK THIS BEFORE START:\
+  🔥 STEP 1: ./ecosystem.dev.config.js" &&
 echo "module.exports = {
   apps : [{
     name: 'back-1337',
@@ -47,15 +54,15 @@ echo "module.exports = {
 echo "  🔥 STEP 2 (if you dont use pm2): ./frontend/.env.development" &&
 echo "REACT_APP_API_ENDPOINT=\"http://localhost:1337\"
 " > frontend/.env.dev &&
-echo "" &&
-echo "🚀 $ pm2 start ecosystem.dev.config.js" &&
-echo "" &&
-echo "===" &&
-echo "" &&
-echo "  PRODUCTION" &&
-echo "" &&
-echo "👉 CHECK THIS BEFORE START:" &&
-echo "  🔥 STEP 1: ./frontend/.env.production" &&
+echo "\
+🚀 $ pm2 start ecosystem.dev.config.js\
+\
+=============================================\
+     PRODUCTION\
+=============================================\
+\
+👉 CHECK THIS BEFORE START:\
+  🔥 STEP 1: ./frontend/.env.production" &&
 echo "REACT_APP_API_ENDPOINT=\"https://DOMAIN.ru/api\"
 " > frontend/.env.prod &&
 echo "  🔥 STEP 2: ./ecosystem.prod.config.js" &&
@@ -90,8 +97,8 @@ echo "module.exports = {
   }],
 };
 " > ecosystem.prod.config.js &&
-echo "" &&
-echo "🚀 $ bash build-all.sh" &&
-echo "🚀 $ pm2 start ecosystem.prod.config.js" &&
-echo "" &&
-echo "===" # && rm -rf fullstack-init.sh
+echo "\
+🚀 $ bash build-all.sh\
+🚀 $ pm2 start ecosystem.prod.config.js\
+\
+=============================================" # && rm -rf fullstack-init.sh
